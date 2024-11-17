@@ -1,9 +1,10 @@
 # spruceUI Theme Template (v0.1)
 The spruce theme template is finally here!
-<br>
-[Click here](https://github.com/spruceUI/Themes/raw/refs/heads/main/Template/template.7z) to download it and check out the [Theme Design guide](https://github.com/spruceUI/spruceOS/wiki/Theme-Design-guide) to get started!
+- [CLICK HERE TO DOWNLOAD IT](https://github.com/spruceUI/Themes/raw/refs/heads/main/Template/template.7z)
+
+- [CHECK OUT THE THEME DESIGN GUIDE](https://github.com/spruceUI/spruceOS/wiki/Theme-Design-guide)
 ---
-<br>
+
 
 ### About
 
