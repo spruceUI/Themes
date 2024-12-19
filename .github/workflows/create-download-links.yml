@@ -33,9 +33,13 @@ jobs:
               packed_path="PackedThemes/$theme_name.7z"
               
               if [ -f "$preview_path" ] && [ -f "$packed_path" ]; then
+                # URL encode the paths
+                encoded_preview_path=$(printf %s "$preview_path" | sed 's/ /%20/g')
+                encoded_packed_path=$(printf %s "$packed_path" | sed 's/ /%20/g')
+                
                 # Get raw GitHub URL for the files
-                preview_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/$preview_path"
-                download_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/$packed_path"
+                preview_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/$encoded_preview_path"
+                download_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/$encoded_packed_path"
                 
                 # Add row to table
                 echo "| <img src=\"$preview_url\" width=\"200\"> | $theme_name | [Download]($download_url) |" >> "$TEMP_FILE"
