@@ -22,16 +22,21 @@ jobs:
           
       - name: Package Modified Themes
         run: |
-          # Get all files in theme folders (excluding PackedThemes and root files)
-          MODIFIED_FILES=$(git ls-files | grep -v '^PackedThemes/' | grep -v '^[^/]*$' || true)
+          # Get modified files from the last commit (excluding PackedThemes and root files)
+          MODIFIED_FILES=$(git diff-tree --no-commit-id --name-only -r HEAD | grep -v '^PackedThemes/' | grep -v '^[^/]*$' || true)
           
-          # Extract unique folder names
+          if [ -z "$MODIFIED_FILES" ]; then
+            echo "No theme files were modified"
+            exit 0
+          fi
+          
+          # Extract unique folder names from modified files
           FOLDERS=$(echo "$MODIFIED_FILES" | cut -d'/' -f1 | sort -u)
           
           # Create PackedThemes directory if it doesn't exist
           mkdir -p PackedThemes
           
-          # Process each theme folder
+          # Process each modified theme folder
           for folder in $FOLDERS; do
             if [ -d "$folder" ]; then
               echo "Packaging $folder..."
