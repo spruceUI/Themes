@@ -19,7 +19,11 @@ jobs:
           
           # Generate the new gallery content
           echo -e "## Theme Gallery\n" > "$GALLERY_CONTENT"
-          echo -e "| Preview | Theme | Download |\n|---------|--------|----------|\n" >> "$GALLERY_CONTENT"
+          
+          # Initialize arrays for the grid
+          declare -a previews=()
+          declare -a names=()
+          declare -a downloads=()
           
           # Process each theme folder
           for theme_dir in */; do
@@ -36,9 +40,53 @@ jobs:
                 preview_url=$(echo "$preview_url" | sed -e 's/ /%20/g')
                 download_url=$(echo "$download_url" | sed -e 's/ /%20/g')
                 
-                echo "| <img src=\"$preview_url\" width=\"200\"> | $theme_name | [Download]($download_url) |" >> "$GALLERY_CONTENT"
+                # Add to arrays
+                previews+=("<img src=\"$preview_url\" width=\"200\">")
+                names+=("$theme_name")
+                downloads+=("[Download]($download_url)")
               fi
             fi
+          done
+          
+          # Output in grid format
+          count=0
+          total=${#previews[@]}
+          
+          while [ $count -lt $total ]; do
+            # Start preview row
+            echo "|" >> "$GALLERY_CONTENT"
+            
+            # Add up to 3 previews
+            for i in {0..2}; do
+              if [ $((count + i)) -lt $total ]; then
+                echo -n "${previews[$((count + i))]} |" >> "$GALLERY_CONTENT"
+              fi
+            done
+            echo "" >> "$GALLERY_CONTENT"
+            
+            # Add names row
+            echo "|" >> "$GALLERY_CONTENT"
+            for i in {0..2}; do
+              if [ $((count + i)) -lt $total ]; then
+                echo -n "${names[$((count + i))]} |" >> "$GALLERY_CONTENT"
+              fi
+            done
+            echo "" >> "$GALLERY_CONTENT"
+            
+            # Add download row
+            echo "|" >> "$GALLERY_CONTENT"
+            for i in {0..2}; do
+              if [ $((count + i)) -lt $total ]; then
+                echo -n "${downloads[$((count + i))]} |" >> "$GALLERY_CONTENT"
+              fi
+            done
+            echo "" >> "$GALLERY_CONTENT"
+            
+            # Add separator
+            echo "|---|---|---|" >> "$GALLERY_CONTENT"
+            echo "" >> "$GALLERY_CONTENT"
+            
+            count=$((count + 3))
           done
           
           # Extract content before Theme Gallery
