@@ -35,8 +35,8 @@ jobs:
           echo "Modified files:"
           echo "$MODIFIED_FILES"
           
-          # Extract unique folder names from modified files and handle spaces in names
-          FOLDERS=$(echo "$MODIFIED_FILES" | cut -d'/' -f1 | sort -u | sed 's/^/"/;s/$/"/')
+          # Extract unique folder names from modified files (without adding quotes)
+          FOLDERS=$(echo "$MODIFIED_FILES" | cut -d'/' -f1 | sort -u)
           
           echo "Folders to process:"
           echo "$FOLDERS"
@@ -47,19 +47,16 @@ jobs:
           # Create PackedThemes directory if it doesn't exist
           mkdir -p PackedThemes
           
-          # Process each modified theme folder
-          echo "$FOLDERS" | while read -r folder; do
-            # Remove quotes from folder name for checks
-            folder_clean=$(echo "$folder" | sed 's/^"//;s/"$//')
-            
-            if [ -d "$folder_clean" ]; then
-              echo "Packaging $folder_clean..."
+          # Process each modified theme folder using null delimiter to handle spaces
+          echo "$FOLDERS" | tr '\n' '\0' | while IFS= read -r -d '' folder; do
+            if [ -d "$folder" ]; then
+              echo "Packaging $folder..."
               # Create temporary directory structure
               mkdir -p "temp/mnt/SDCARD/Themes"
-              cp -r "$folder_clean" "temp/mnt/SDCARD/Themes/"
+              cp -r "$folder" "temp/mnt/SDCARD/Themes/"
               
               # Create 7z archive from workspace root
-              7z a -r "${WORKSPACE}/PackedThemes/${folder_clean}.7z" "${WORKSPACE}/temp/mnt"
+              7z a -r "${WORKSPACE}/PackedThemes/${folder}.7z" "${WORKSPACE}/temp/mnt"
               
               # Cleanup
               rm -rf temp
