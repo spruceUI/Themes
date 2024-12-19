@@ -39,8 +39,10 @@ jobs:
               mkdir -p "temp/mnt/SDCARD/Themes"
               cp -r "$folder" "temp/mnt/SDCARD/Themes/"
               
-              # Create 7z archive
-              7z a -r "PackedThemes/${folder}.7z" "./temp/mnt"
+              # Change to temp directory and create 7z archive
+              cd temp
+              7z a -r "../PackedThemes/${folder}.7z" "mnt"
+              cd ..
               
               # Cleanup
               rm -rf temp
