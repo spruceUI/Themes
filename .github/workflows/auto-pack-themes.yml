@@ -44,16 +44,19 @@ jobs:
           WORKSPACE="$PWD"
           mkdir -p PackedThemes
           
-          # Process each modified theme folder using standard IFS
+          # Process each modified theme folder
           printf '%s\n' "$FOLDERS" | while IFS= read -r folder; do
             echo "Debug: Processing folder: '$folder'"
             if [ -d "$folder" ]; then
               echo "Debug: Directory exists: '$folder'"
+              # Remove existing archive if it exists
+              rm -f "${WORKSPACE}/PackedThemes/${folder}.7z"
+              
               # Create temporary directory structure
               mkdir -p "temp/mnt/SDCARD/Themes"
               cp -r "$folder" "temp/mnt/SDCARD/Themes/"
               
-              # Create 7z archive from workspace root
+              # Create fresh 7z archive from workspace root
               7z a -r "${WORKSPACE}/PackedThemes/${folder}.7z" "${WORKSPACE}/temp/mnt"
               
               # Cleanup
