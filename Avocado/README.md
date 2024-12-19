@@ -2,9 +2,7 @@
 
 Theme for spruce modded stock os
 
-
 ## Credits
-
 
 **Font SmallLcd.ttf:** by myname5749
 
