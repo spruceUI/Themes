@@ -1,0 +1,56 @@
+name: Package Theme Updates
+
+on:
+  push:
+    paths-ignore:
+      - 'PackedThemes/**'
+      - '.*'
+      - '*.md'
+      - 'LICENSE'
+
+jobs:
+  package-themes:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install 7-Zip
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y p7zip-full
+          
+      - name: Package Modified Themes
+        run: |
+          # Get all modified files excluding PackedThemes and root files
+          MODIFIED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -v '^PackedThemes/' | grep -v '^[^/]*$' || true)
+          
+          # Extract unique folder names from modified files
+          FOLDERS=$(echo "$MODIFIED_FILES" | cut -d'/' -f1 | sort -u)
+          
+          # Create PackedThemes directory if it doesn't exist
+          mkdir -p PackedThemes
+          
+          # Process each modified theme folder
+          for folder in $FOLDERS; do
+            if [ -d "$folder" ]; then
+              echo "Packaging $folder..."
+              # Create temporary directory structure
+              mkdir -p "temp/mnt/SDCARD/Themes"
+              cp -r "$folder" "temp/mnt/SDCARD/Themes/"
+              
+              # Create 7z archive
+              7z a -r "PackedThemes/${folder}.7z" "./temp/mnt"
+              
+              # Cleanup
+              rm -rf temp
+            fi
+          done
+          
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add PackedThemes/*.7z
+          git commit -m "Update theme packages" || echo "No changes to commit"
+          git push
