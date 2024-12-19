@@ -1,0 +1,59 @@
+name: Package All Themes (Manual)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  package-themes:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Install 7-Zip
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y p7zip-full
+          
+      - name: Package All Themes
+        run: |
+          # Find all theme folders (excluding PackedThemes and hidden folders)
+          FOLDERS=$(find . -maxdepth 1 -type d ! -name ".*" ! -name "PackedThemes" ! -name "temp" ! -path "." | sed 's|^./||' | sed 's/^/"/;s/$/"/')
+          
+          echo "Folders to process:"
+          echo "$FOLDERS"
+          
+          # Store the absolute path to the workspace
+          WORKSPACE="$PWD"
+          
+          # Create PackedThemes directory if it doesn't exist
+          mkdir -p PackedThemes
+          
+          # Process each theme folder
+          echo "$FOLDERS" | while read -r folder; do
+            # Remove quotes from folder name for checks
+            folder_clean=$(echo "$folder" | sed 's/^"//;s/"$//')
+            
+            if [ -d "$folder_clean" ]; then
+              echo "Packaging $folder_clean..."
+              # Create temporary directory structure
+              mkdir -p "temp/mnt/SDCARD/Themes"
+              cp -r "$folder_clean" "temp/mnt/SDCARD/Themes/"
+              
+              # Create 7z archive from workspace root
+              7z a -r "${WORKSPACE}/PackedThemes/${folder_clean}.7z" "${WORKSPACE}/temp/mnt"
+              
+              # Cleanup
+              rm -rf temp
+            fi
+          done
+          
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add PackedThemes/*.7z
+          git commit -m "Update all theme packages" || echo "No changes to commit"
+          git push
