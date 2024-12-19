@@ -22,16 +22,16 @@ jobs:
           
       - name: Package Modified Themes
         run: |
-          # Get all modified files excluding PackedThemes and root files
-          MODIFIED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -v '^PackedThemes/' | grep -v '^[^/]*$' || true)
+          # Get all files in theme folders (excluding PackedThemes and root files)
+          MODIFIED_FILES=$(git ls-files | grep -v '^PackedThemes/' | grep -v '^[^/]*$' || true)
           
-          # Extract unique folder names from modified files
+          # Extract unique folder names
           FOLDERS=$(echo "$MODIFIED_FILES" | cut -d'/' -f1 | sort -u)
           
           # Create PackedThemes directory if it doesn't exist
           mkdir -p PackedThemes
           
-          # Process each modified theme folder
+          # Process each theme folder
           for folder in $FOLDERS; do
             if [ -d "$folder" ]; then
               echo "Packaging $folder..."
