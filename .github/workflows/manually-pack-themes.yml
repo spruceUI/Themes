@@ -20,10 +20,10 @@ jobs:
       - name: Package All Themes
         run: |
           # Find all theme folders (excluding PackedThemes and hidden folders)
-          FOLDERS=$(find . -maxdepth 1 -type d ! -name ".*" ! -name "PackedThemes" ! -name "temp" ! -path "." | sed 's|^./||' | sed 's/^/"/;s/$/"/')
+          FOLDERS=$(find . -maxdepth 1 -type d ! -name ".*" ! -name "PackedThemes" ! -name "temp" ! -path "." | sed 's|^./||')
           
           echo "Folders to process:"
-          echo "$FOLDERS"
+          printf '%s\n' "$FOLDERS"
           
           # Store the absolute path to the workspace
           WORKSPACE="$PWD"
@@ -32,18 +32,18 @@ jobs:
           mkdir -p PackedThemes
           
           # Process each theme folder
-          echo "$FOLDERS" | while read -r folder; do
-            # Remove quotes from folder name for checks
-            folder_clean=$(echo "$folder" | sed 's/^"//;s/"$//')
-            
-            if [ -d "$folder_clean" ]; then
-              echo "Packaging $folder_clean..."
+          printf '%s\n' "$FOLDERS" | while IFS= read -r folder; do
+            if [ -d "$folder" ]; then
+              echo "Packaging $folder..."
+              # Remove existing archive if it exists
+              rm -f "${WORKSPACE}/PackedThemes/${folder}.7z"
+              
               # Create temporary directory structure
               mkdir -p "temp/mnt/SDCARD/Themes"
-              cp -r "$folder_clean" "temp/mnt/SDCARD/Themes/"
+              cp -r "$folder" "temp/mnt/SDCARD/Themes/"
               
-              # Create 7z archive from workspace root
-              7z a -r "${WORKSPACE}/PackedThemes/${folder_clean}.7z" "${WORKSPACE}/temp/mnt"
+              # Create fresh 7z archive from workspace root
+              7z a -r "${WORKSPACE}/PackedThemes/${folder}.7z" "${WORKSPACE}/temp/mnt"
               
               # Cleanup
               rm -rf temp
