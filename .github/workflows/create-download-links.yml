@@ -21,9 +21,7 @@ jobs:
           echo -e "## Theme Gallery\n" > "$GALLERY_CONTENT"
           
           # Initialize arrays for the grid
-          declare -a previews=()
-          declare -a names=()
-          declare -a downloads=()
+          declare -a themes=()
           
           # Process each theme folder
           for theme_dir in */; do
@@ -40,54 +38,41 @@ jobs:
                 preview_url=$(echo "$preview_url" | sed -e 's/ /%20/g')
                 download_url=$(echo "$download_url" | sed -e 's/ /%20/g')
                 
-                # Add to arrays
-                previews+=("<img src=\"$preview_url\" width=\"200\">")
-                names+=("$theme_name")
-                downloads+=("[Download]($download_url)")
+                # Create theme cell content
+                theme_cell="<td align=\"center\" valign=\"top\" width=\"33.33%\">
+                  <br/>
+                  <a href=\"$download_url\">
+                  <img title=\"$theme_name\" width=\"200px\" src=\"$preview_url\" /><br/>
+                  <b>$theme_name</b>
+                  </a><br/>
+                  </td>"
+                
+                themes+=("$theme_cell")
               fi
             fi
           done
           
           # Output in grid format
           count=0
-          total=${#previews[@]}
+          total=${#themes[@]}
+          
+          echo "<table align=\"center\">" >> "$GALLERY_CONTENT"
           
           while [ $count -lt $total ]; do
-            # Start preview row
-            echo "|" >> "$GALLERY_CONTENT"
+            echo "<tr>" >> "$GALLERY_CONTENT"
             
-            # Add up to 3 previews
+            # Add up to 3 theme cells per row
             for i in {0..2}; do
               if [ $((count + i)) -lt $total ]; then
-                echo -n "${previews[$((count + i))]} |" >> "$GALLERY_CONTENT"
+                echo "${themes[$((count + i))]}" >> "$GALLERY_CONTENT"
               fi
             done
-            echo "" >> "$GALLERY_CONTENT"
             
-            # Add names row
-            echo "|" >> "$GALLERY_CONTENT"
-            for i in {0..2}; do
-              if [ $((count + i)) -lt $total ]; then
-                echo -n "${names[$((count + i))]} |" >> "$GALLERY_CONTENT"
-              fi
-            done
-            echo "" >> "$GALLERY_CONTENT"
-            
-            # Add download row
-            echo "|" >> "$GALLERY_CONTENT"
-            for i in {0..2}; do
-              if [ $((count + i)) -lt $total ]; then
-                echo -n "${downloads[$((count + i))]} |" >> "$GALLERY_CONTENT"
-              fi
-            done
-            echo "" >> "$GALLERY_CONTENT"
-            
-            # Add separator
-            echo "|---|---|---|" >> "$GALLERY_CONTENT"
-            echo "" >> "$GALLERY_CONTENT"
-            
+            echo "</tr>" >> "$GALLERY_CONTENT"
             count=$((count + 3))
           done
+          
+          echo "</table>" >> "$GALLERY_CONTENT"
           
           # Extract content before Theme Gallery
           awk '/^## Theme Gallery/{exit} {print}' README.md > "$TEMP_FILE"
