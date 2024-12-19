@@ -9,29 +9,76 @@ Themes here are in .7z format, you can place them into your Themes folder and sp
 
 ## Theme Gallery
 
-|
-<img src="https://raw.githubusercontent.com/spruceUI/Themes/main/Avocado/preview.png" width="200"> |<img src="https://raw.githubusercontent.com/spruceUI/Themes/main/Cosy%20by%20KyleBing/preview.png" width="200"> |<img src="https://raw.githubusercontent.com/spruceUI/Themes/main/M%20-%20no%20labels/preview.png" width="200"> |
-|
-Avocado |Cosy by KyleBing |M - no labels |
-|
-[Download](https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/Avocado.7z) |[Download](https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/Cosy%20by%20KyleBing.7z) |[Download](https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/M%20-%20no%20labels.7z) |
-|---|---|---|
-
-|
-<img src="https://raw.githubusercontent.com/spruceUI/Themes/main/M/preview.png" width="200"> |<img src="https://raw.githubusercontent.com/spruceUI/Themes/main/MinUInspired%20(Grey)/preview.png" width="200"> |<img src="https://raw.githubusercontent.com/spruceUI/Themes/main/MinUInspired%20(icons)/preview.png" width="200"> |
-|
-M |MinUInspired (Grey) |MinUInspired (icons) |
-|
-[Download](https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/M.7z) |[Download](https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/MinUInspired%20(Grey).7z) |[Download](https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/MinUInspired%20(icons).7z) |
-|---|---|---|
-
-|
-<img src="https://raw.githubusercontent.com/spruceUI/Themes/main/MinUInspired%20(logos)/preview.png" width="200"> |<img src="https://raw.githubusercontent.com/spruceUI/Themes/main/SPRUCE%20(simple)/preview.png" width="200"> |<img src="https://raw.githubusercontent.com/spruceUI/Themes/main/SPRUCE/preview.png" width="200"> |
-|
-MinUInspired (logos) |SPRUCE (simple) |SPRUCE |
-|
-[Download](https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/MinUInspired%20(logos).7z) |[Download](https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/SPRUCE%20(simple).7z) |[Download](https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/SPRUCE.7z) |
-|---|---|---|
-
+<table align="center">
+<tr>
+<td align="center" valign="top" width="33.33%">
+        <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/Avocado.7z">
+        <img title="Avocado" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/Avocado/preview.png" /><br/>
+        <b>Avocado</b>
+        </a><br/>
+        </td>
+<td align="center" valign="top" width="33.33%">
+        <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/Cosy%20by%20KyleBing.7z">
+        <img title="Cosy by KyleBing" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/Cosy%20by%20KyleBing/preview.png" /><br/>
+        <b>Cosy by KyleBing</b>
+        </a><br/>
+        </td>
+<td align="center" valign="top" width="33.33%">
+        <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/M%20-%20no%20labels.7z">
+        <img title="M - no labels" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/M%20-%20no%20labels/preview.png" /><br/>
+        <b>M - no labels</b>
+        </a><br/>
+        </td>
+</tr>
+<tr>
+<td align="center" valign="top" width="33.33%">
+        <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/M.7z">
+        <img title="M" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/M/preview.png" /><br/>
+        <b>M</b>
+        </a><br/>
+        </td>
+<td align="center" valign="top" width="33.33%">
+        <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/MinUInspired%20(Grey).7z">
+        <img title="MinUInspired (Grey)" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/MinUInspired%20(Grey)/preview.png" /><br/>
+        <b>MinUInspired (Grey)</b>
+        </a><br/>
+        </td>
+<td align="center" valign="top" width="33.33%">
+        <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/MinUInspired%20(icons).7z">
+        <img title="MinUInspired (icons)" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/MinUInspired%20(icons)/preview.png" /><br/>
+        <b>MinUInspired (icons)</b>
+        </a><br/>
+        </td>
+</tr>
+<tr>
+<td align="center" valign="top" width="33.33%">
+        <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/MinUInspired%20(logos).7z">
+        <img title="MinUInspired (logos)" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/MinUInspired%20(logos)/preview.png" /><br/>
+        <b>MinUInspired (logos)</b>
+        </a><br/>
+        </td>
+<td align="center" valign="top" width="33.33%">
+        <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/SPRUCE%20(simple).7z">
+        <img title="SPRUCE (simple)" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/SPRUCE%20(simple)/preview.png" /><br/>
+        <b>SPRUCE (simple)</b>
+        </a><br/>
+        </td>
+<td align="center" valign="top" width="33.33%">
+        <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/SPRUCE.7z">
+        <img title="SPRUCE" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/SPRUCE/preview.png" /><br/>
+        <b>SPRUCE</b>
+        </a><br/>
+        </td>
+</tr>
+</table>
 
 Themes here are in .7z format, you can place them into your Themes folder and spruce will automatically unzip them.
