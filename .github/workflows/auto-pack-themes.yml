@@ -41,6 +41,9 @@ jobs:
           echo "Folders to process:"
           echo "$FOLDERS"
           
+          # Store the absolute path to the workspace
+          WORKSPACE="$PWD"
+          
           # Create PackedThemes directory if it doesn't exist
           mkdir -p PackedThemes
           
@@ -55,10 +58,8 @@ jobs:
               mkdir -p "temp/mnt/SDCARD/Themes"
               cp -r "$folder_clean" "temp/mnt/SDCARD/Themes/"
               
-              # Change to temp directory and create 7z archive
-              cd temp
-              7z a -r "../PackedThemes/${folder_clean}.7z" "mnt"
-              cd ..
+              # Create 7z archive from workspace root
+              7z a -r "${WORKSPACE}/PackedThemes/${folder_clean}.7z" "${WORKSPACE}/temp/mnt"
               
               # Cleanup
               rm -rf temp
