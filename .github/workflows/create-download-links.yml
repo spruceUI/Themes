@@ -13,17 +13,13 @@ jobs:
       - name: Generate Theme Gallery
         id: generate-gallery
         run: |
-          # Create temporary file for new content
+          # Create temporary files
           TEMP_FILE=$(mktemp)
+          GALLERY_CONTENT=$(mktemp)
           
-          # Copy content before the Theme Gallery section
-          sed '/^## Theme Gallery/q' README.md | sed '/^## Theme Gallery/d' > "$TEMP_FILE"
-          
-          # Add gallery header
-          echo -e "\n## Theme Gallery\n" >> "$TEMP_FILE"
-          
-          # Initialize table header
-          echo -e "| Preview | Theme | Download |\n|---------|--------|----------|\n" >> "$TEMP_FILE"
+          # Generate the new gallery content
+          echo -e "## Theme Gallery\n" > "$GALLERY_CONTENT"
+          echo -e "| Preview | Theme | Download |\n|---------|--------|----------|\n" >> "$GALLERY_CONTENT"
           
           # Process each theme folder
           for theme_dir in */; do
@@ -33,24 +29,28 @@ jobs:
               packed_path="PackedThemes/$theme_name.7z"
               
               if [ -f "$preview_path" ] && [ -f "$packed_path" ]; then
-                # URL encode the paths using percent encoding
-                encoded_preview_path=$(echo "$preview_path" | sed -e 's/ /%20/g' -e 's/\[/%5B/g' -e 's/\]/%5D/g')
-                encoded_packed_path=$(echo "$packed_path" | sed -e 's/ /%20/g' -e 's/\[/%5B/g' -e 's/\]/%5D/g')
+                # Create properly encoded URLs
+                preview_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/${theme_dir}preview.png"
+                download_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/PackedThemes/${theme_name}.7z"
                 
-                # Get raw GitHub URL for the files
-                preview_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/$encoded_preview_path"
-                download_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/$encoded_packed_path"
+                preview_url=$(echo "$preview_url" | sed -e 's/ /%20/g')
+                download_url=$(echo "$download_url" | sed -e 's/ /%20/g')
                 
-                # Add row to table
-                echo "| <img src=\"$preview_url\" width=\"200\"> | $theme_name | [Download]($download_url) |" >> "$TEMP_FILE"
+                echo "| <img src=\"$preview_url\" width=\"200\"> | $theme_name | [Download]($download_url) |" >> "$GALLERY_CONTENT"
               fi
             fi
           done
           
-          # Add the remaining content after the Theme Gallery section
-          sed -n '/^Themes here/,$p' README.md >> "$TEMP_FILE"
+          # Extract content before Theme Gallery
+          awk '/^## Theme Gallery/{exit} {print}' README.md > "$TEMP_FILE"
           
-          # Replace original README with new content
+          # Add the new gallery content
+          cat "$GALLERY_CONTENT" >> "$TEMP_FILE"
+          
+          # Add footer content
+          echo -e "\nThemes here are in .7z format, you can place them into your Themes folder and spruce will automatically unzip them." >> "$TEMP_FILE"
+          
+          # Replace the original README
           mv "$TEMP_FILE" README.md
 
       - name: Commit and push changes
