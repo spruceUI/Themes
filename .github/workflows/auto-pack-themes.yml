@@ -30,23 +30,32 @@ jobs:
             exit 0
           fi
           
-          # Extract unique folder names from modified files
-          FOLDERS=$(echo "$MODIFIED_FILES" | cut -d'/' -f1 | sort -u)
+          echo "Modified files:"
+          echo "$MODIFIED_FILES"
+          
+          # Extract unique folder names from modified files and handle spaces in names
+          FOLDERS=$(echo "$MODIFIED_FILES" | cut -d'/' -f1 | sort -u | sed 's/^/"/;s/$/"/')
+          
+          echo "Folders to process:"
+          echo "$FOLDERS"
           
           # Create PackedThemes directory if it doesn't exist
           mkdir -p PackedThemes
           
           # Process each modified theme folder
-          for folder in $FOLDERS; do
-            if [ -d "$folder" ]; then
-              echo "Packaging $folder..."
+          echo "$FOLDERS" | while read -r folder; do
+            # Remove quotes from folder name for checks
+            folder_clean=$(echo "$folder" | sed 's/^"//;s/"$//')
+            
+            if [ -d "$folder_clean" ]; then
+              echo "Packaging $folder_clean..."
               # Create temporary directory structure
               mkdir -p "temp/mnt/SDCARD/Themes"
-              cp -r "$folder" "temp/mnt/SDCARD/Themes/"
+              cp -r "$folder_clean" "temp/mnt/SDCARD/Themes/"
               
               # Change to temp directory and create 7z archive
               cd temp
-              7z a -r "../PackedThemes/${folder}.7z" "mnt"
+              7z a -r "../PackedThemes/${folder_clean}.7z" "mnt"
               cd ..
               
               # Cleanup
