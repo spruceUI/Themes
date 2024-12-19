@@ -35,22 +35,20 @@ jobs:
           echo "Modified files:"
           echo "$MODIFIED_FILES"
           
-          # Extract unique folder names from modified files (without adding quotes)
+          # Extract unique folder names from modified files
           FOLDERS=$(echo "$MODIFIED_FILES" | cut -d'/' -f1 | sort -u)
           
-          echo "Folders to process:"
-          echo "$FOLDERS"
+          echo "Debug: Listing each folder individually:"
+          printf '%s\n' "$FOLDERS"
           
-          # Store the absolute path to the workspace
           WORKSPACE="$PWD"
-          
-          # Create PackedThemes directory if it doesn't exist
           mkdir -p PackedThemes
           
-          # Process each modified theme folder using null delimiter to handle spaces
-          echo "$FOLDERS" | tr '\n' '\0' | while IFS= read -r -d '' folder; do
+          # Process each modified theme folder using standard IFS
+          printf '%s\n' "$FOLDERS" | while IFS= read -r folder; do
+            echo "Debug: Processing folder: '$folder'"
             if [ -d "$folder" ]; then
-              echo "Packaging $folder..."
+              echo "Debug: Directory exists: '$folder'"
               # Create temporary directory structure
               mkdir -p "temp/mnt/SDCARD/Themes"
               cp -r "$folder" "temp/mnt/SDCARD/Themes/"
@@ -60,6 +58,8 @@ jobs:
               
               # Cleanup
               rm -rf temp
+            else
+              echo "Debug: Directory does not exist: '$folder'"
             fi
           done
           
