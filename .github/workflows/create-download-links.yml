@@ -16,8 +16,8 @@ jobs:
           # Create temporary file for new content
           TEMP_FILE=$(mktemp)
           
-          # Copy header content until the preview section
-          sed '/^![spruce-home-page]/q' README.md > "$TEMP_FILE"
+          # Copy content before the Theme Gallery section
+          sed '/^## Theme Gallery/q' README.md | sed '/^## Theme Gallery/d' > "$TEMP_FILE"
           
           # Add gallery header
           echo -e "\n## Theme Gallery\n" >> "$TEMP_FILE"
@@ -33,9 +33,9 @@ jobs:
               packed_path="PackedThemes/$theme_name.7z"
               
               if [ -f "$preview_path" ] && [ -f "$packed_path" ]; then
-                # URL encode the paths
-                encoded_preview_path=$(printf %s "$preview_path" | sed 's/ /%20/g')
-                encoded_packed_path=$(printf %s "$packed_path" | sed 's/ /%20/g')
+                # URL encode the paths using percent encoding
+                encoded_preview_path=$(echo "$preview_path" | sed -e 's/ /%20/g' -e 's/\[/%5B/g' -e 's/\]/%5D/g')
+                encoded_packed_path=$(echo "$packed_path" | sed -e 's/ /%20/g' -e 's/\[/%5B/g' -e 's/\]/%5D/g')
                 
                 # Get raw GitHub URL for the files
                 preview_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/$encoded_preview_path"
@@ -47,7 +47,7 @@ jobs:
             fi
           done
           
-          # Add the remaining content from the original README
+          # Add the remaining content after the Theme Gallery section
           sed -n '/^Themes here/,$p' README.md >> "$TEMP_FILE"
           
           # Replace original README with new content
