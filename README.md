@@ -25,13 +25,20 @@ Please help us by contributing your A30 themes here!
         </td>
 <td align="center" valign="top" width="33.33%">
         <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/KantOS.7z">
+        <img title="KantOS" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/KantOS/preview.png" /><br/>
+        <b>KantOS</b>
+        </a><br/>
+        </td>
+</tr>
+<tr>
+<td align="center" valign="top" width="33.33%">
+        <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/M%20-%20no%20labels.7z">
         <img title="M - no labels" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/M%20-%20no%20labels/preview.png" /><br/>
         <b>M - no labels</b>
         </a><br/>
         </td>
-</tr>
-<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/M.7z">
@@ -46,6 +53,8 @@ Please help us by contributing your A30 themes here!
         <b>MinUInspired (Grey)</b>
         </a><br/>
         </td>
+</tr>
+<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/MinUInspired%20(icons).7z">
@@ -53,8 +62,6 @@ Please help us by contributing your A30 themes here!
         <b>MinUInspired (icons)</b>
         </a><br/>
         </td>
-</tr>
-<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/MinUInspired%20(logos).7z">
@@ -69,6 +76,8 @@ Please help us by contributing your A30 themes here!
         <b>SPRUCE (simple)</b>
         </a><br/>
         </td>
+</tr>
+<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/SPRUCE.7z">
@@ -77,15 +86,6 @@ Please help us by contributing your A30 themes here!
         </a><br/>
         </td>
 </tr>
-<td align="center" valign="top" width="33.33%">
-        <br/>
-        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/KantOS.7z">
-        <img title="KantOS" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/KantOS/preview.png" /><br/>
-        <b>KantOS</b>
-        </a><br/>
-        </td>
-</tr>
-<tr>
 </table>
 
 Themes here are in .7z format, you can place them into your Themes folder and spruce will automatically unzip them.
