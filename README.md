@@ -77,6 +77,15 @@ Please help us by contributing your A30 themes here!
         </a><br/>
         </td>
 </tr>
+<td align="center" valign="top" width="33.33%">
+        <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/KantOS.7z">
+        <img title="KantOS" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/KantOS/preview.png" /><br/>
+        <b>KantOS</b>
+        </a><br/>
+        </td>
+</tr>
+<tr>
 </table>
 
 Themes here are in .7z format, you can place them into your Themes folder and spruce will automatically unzip them.
