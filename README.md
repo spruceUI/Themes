@@ -25,9 +25,9 @@ Please help us by contributing your A30 themes here!
         </td>
 <td align="center" valign="top" width="33.33%">
         <br/>
-        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/Cosy%20by%20KyleBing-FLIP.7z">
-        <img title="Cosy by KyleBing-FLIP" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/Cosy%20by%20KyleBing-FLIP/preview.png" /><br/>
-        <b>Cosy by KyleBing-FLIP</b>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/Cosy%20by%20KyleBing.7z">
+        <img title="Cosy by KyleBing" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/Cosy%20by%20KyleBing/preview.png" /><br/>
+        <b>Cosy by KyleBing</b>
         </a><br/>
         </td>
 </tr>
