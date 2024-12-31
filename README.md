@@ -25,13 +25,43 @@ Please help us by contributing your A30 themes here!
         </td>
 <td align="center" valign="top" width="33.33%">
         <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/HeyDW%20Presents%20Blue.7z">
+        <img title="HeyDW Presents Blue" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/HeyDW%20Presents%20Blue/preview.png" /><br/>
+        <b>HeyDW Presents Blue</b>
+        </a><br/>
+        </td>
+</tr>
+<tr>
+<td align="center" valign="top" width="33.33%">
+        <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/HeyDW's%20Green.7z">
+        <img title="HeyDW's Green" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/HeyDW's%20Green/preview.png" /><br/>
+        <b>HeyDW's Green</b>
+        </a><br/>
+        </td>
+<td align="center" valign="top" width="33.33%">
+        <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/HeyDW's%20Red.7z">
+        <img title="HeyDW's Red" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/HeyDW's%20Red/preview.png" /><br/>
+        <b>HeyDW's Red</b>
+        </a><br/>
+        </td>
+<td align="center" valign="top" width="33.33%">
+        <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/HeyDW's%20Yellow.7z">
+        <img title="HeyDW's Yellow" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/HeyDW's%20Yellow/preview.png" /><br/>
+        <b>HeyDW's Yellow</b>
+        </a><br/>
+        </td>
+</tr>
+<tr>
+<td align="center" valign="top" width="33.33%">
+        <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/KantOS.7z">
         <img title="KantOS" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/KantOS/preview.png" /><br/>
         <b>KantOS</b>
         </a><br/>
         </td>
-</tr>
-<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/M%20-%20no%20labels.7z">
@@ -46,6 +76,8 @@ Please help us by contributing your A30 themes here!
         <b>M</b>
         </a><br/>
         </td>
+</tr>
+<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/MinUInspired%20(Grey).7z">
@@ -53,8 +85,6 @@ Please help us by contributing your A30 themes here!
         <b>MinUInspired (Grey)</b>
         </a><br/>
         </td>
-</tr>
-<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/MinUInspired%20(icons).7z">
@@ -69,6 +99,8 @@ Please help us by contributing your A30 themes here!
         <b>MinUInspired (logos)</b>
         </a><br/>
         </td>
+</tr>
+<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/SPRUCE%20(simple).7z">
@@ -76,8 +108,6 @@ Please help us by contributing your A30 themes here!
         <b>SPRUCE (simple)</b>
         </a><br/>
         </td>
-</tr>
-<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/SPRUCE.7z">
