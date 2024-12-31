@@ -25,9 +25,9 @@ Please help us by contributing your A30 themes here!
         </td>
 <td align="center" valign="top" width="33.33%">
         <br/>
-        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/HeyDW%20Presents%20Blue.7z">
-        <img title="HeyDW Presents Blue" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/HeyDW%20Presents%20Blue/preview.png" /><br/>
-        <b>HeyDW Presents Blue</b>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/HeyDW's%20Blue.7z">
+        <img title="HeyDW's Blue" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/HeyDW's%20Blue/preview.png" /><br/>
+        <b>HeyDW's Blue</b>
         </a><br/>
         </td>
 </tr>
