@@ -50,7 +50,7 @@ jobs:
                 theme_name_encoded=$(echo "$theme_name" | sed -e 's/ /%20/g')
                 
                 if [ -f "$theme_dir/preview.gif" ]; then
-                    preview_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/Themes/${preview_path}?raw=true"
+                    preview_url="https://github.com/$GITHUB_REPOSITORY/blob/main/Themes/${preview_path}"
                 else
                     preview_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/Themes/${preview_path}"
                 fi
