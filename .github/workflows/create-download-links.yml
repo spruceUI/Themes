@@ -29,8 +29,13 @@ jobs:
               theme_name="${theme_dir%/}"
               preview_path="$theme_dir/preview.png"
               packed_path="PackedThemes/$theme_name.7z"
+              config_path="$theme_dir/config.json"
               
-              if [ -f "$preview_path" ] && [ -f "$packed_path" ]; then
+              if [ -f "$preview_path" ] && [ -f "$packed_path" ] && [ -f "$config_path" ]; then
+                # Extract author and description from config.json
+                author=$(jq -r '.author' "$config_path")
+                description=$(jq -r '.description' "$config_path")
+                
                 # Create properly encoded URLs
                 preview_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/${theme_dir}preview.png"
                 download_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/PackedThemes/${theme_name}.7z"
@@ -43,8 +48,9 @@ jobs:
                   <br/>
                   <a href=\"$download_url\">
                   <img title=\"$theme_name\" width=\"200px\" src=\"$preview_url\" /><br/>
-                  <b>$theme_name</b>
-                  </a><br/>
+                  <b>$theme_name</b></a><br/>
+                  <small><i>$author</i></small><br/>
+                  <small>$description</small><br/>
                   </td>"
                 
                 themes+=("$theme_cell")
