@@ -50,16 +50,17 @@ jobs:
                 theme_name_encoded=$(echo "$theme_name" | sed -e 's/ /%20/g')
                 
                 if [ -f "$theme_dir/preview.gif" ]; then
-                    preview_url="https://github.com/$GITHUB_REPOSITORY/blob/main/Themes/${preview_path}?raw=true"
-                    preview_img="![${theme_name_encoded}](${preview_url})"
+                    preview_url="https://github.com/$GITHUB_REPOSITORY/blob/main/Themes/${theme_name_encoded}/preview.gif?raw=true"
+                    preview_img="![${theme_name}](${preview_url})"
                 else
-                    preview_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/Themes/${preview_path}"
+                    preview_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/Themes/${theme_name_encoded}/preview.png"
                     preview_img="<img title=\"${theme_name}\" width=\"200px\" src=\"${preview_url}\" />"
                 fi
                 download_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/PackedThemes/${theme_name_encoded}.7z"
                 
-                preview_url=$(echo "$preview_url" | sed -e 's/ /%20/g' -e 's|//|/|g' -e 's|https:/|https://|')
-                download_url=$(echo "$download_url" | sed -e 's|//|/|g' -e 's|https:/|https://|')
+                # Clean up URLs (remove any double slashes except after https:)
+                preview_url=$(echo "$preview_url" | sed -e 's|([^:])//|\1/|g' -e 's|https:/|https://|')
+                download_url=$(echo "$download_url" | sed -e 's|([^:])//|\1/|g' -e 's|https:/|https://|')
                 
                 # Create theme cell content
                 theme_cell="<td align=\"center\" valign=\"top\" width=\"33.33%\">
