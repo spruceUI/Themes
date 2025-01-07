@@ -21,8 +21,10 @@ jobs:
         run: |
           # Create PackedThemes directory if it doesn't exist
           mkdir -p PackedThemes
-          # Remove all existing files in PackedThemes
-          rm -f PackedThemes/*
+          # Remove all existing files in PackedThemes (including git-tracked files)
+          git rm -rf PackedThemes/*.7z || true
+          # Ensure the directory exists after git rm
+          mkdir -p PackedThemes
           
       - name: Package All Themes
         run: |
