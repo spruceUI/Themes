@@ -46,11 +46,14 @@ jobs:
                 fi
                 
                 # Create properly encoded URLs
-                preview_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/${preview_path}"
-                download_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/PackedThemes/${theme_name}.7z"
+                preview_path=$(echo "$preview_path" | sed 's|^Themes/||')
+                theme_name_encoded=$(echo "$theme_name" | sed -e 's/ /%20/g')
                 
-                preview_url=$(echo "$preview_url" | sed -e 's/ /%20/g')
-                download_url=$(echo "$download_url" | sed -e 's/ /%20/g')
+                preview_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/Themes/${preview_path}"
+                download_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/PackedThemes/${theme_name_encoded}.7z"
+                
+                preview_url=$(echo "$preview_url" | sed -e 's/ /%20/g' -e 's|//|/|g')
+                download_url=$(echo "$download_url" | sed -e 's|//|/|g')
                 
                 # Create theme cell content
                 theme_cell="<td align=\"center\" valign=\"top\" width=\"33.33%\">
