@@ -81,7 +81,7 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/KantOS.7z">
-        <img title="KantOS" width="200px" src="https://github.com/spruceUI/Themes/blob/main/Themes/KantOS/preview.gif" /><br/>
+        <img title="KantOS" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/Themes/KantOS/preview.gif#gh-light-mode-only" /><br/>
         <b>KantOS</b></a><br/>
         <small><i>Chris Cromer</i></small><br/>
         <small>A KantOS port heavily tweaked for spruce</small><br/>
@@ -151,7 +151,7 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/SPRUCE.7z">
-        <img title="SPRUCE" width="200px" src="https://github.com/spruceUI/Themes/blob/main/Themes/SPRUCE/preview.gif" /><br/>
+        <img title="SPRUCE" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/Themes/SPRUCE/preview.gif#gh-light-mode-only" /><br/>
         <b>SPRUCE</b></a><br/>
         <small><i>tenlevels</i></small><br/>
         <small>spruce theme for a30</small><br/>
