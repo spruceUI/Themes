@@ -51,7 +51,8 @@ jobs:
                 
                 if [ -f "$theme_dir/preview.gif" ]; then
                     preview_url="https://github.com/$GITHUB_REPOSITORY/blob/main/Themes/${theme_name_encoded}/preview.gif?raw=true"
-                    preview_img="![${theme_name}](${preview_url})"
+                    # For GIFs, use markdown syntax without HTML encoding
+                    preview_img='!['"${theme_name}"']('"${preview_url}"')'
                 else
                     preview_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/Themes/${theme_name_encoded}/preview.png"
                     preview_img="<img title=\"${theme_name}\" width=\"200px\" src=\"${preview_url}\" />"
