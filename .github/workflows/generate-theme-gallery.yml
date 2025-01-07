@@ -49,7 +49,11 @@ jobs:
                 preview_path=$(echo "$preview_path" | sed 's|^Themes/||')
                 theme_name_encoded=$(echo "$theme_name" | sed -e 's/ /%20/g')
                 
-                preview_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/Themes/${preview_path}"
+                if [ -f "$theme_dir/preview.gif" ]; then
+                    preview_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/Themes/${preview_path}?raw=true"
+                else
+                    preview_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/Themes/${preview_path}"
+                fi
                 download_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/PackedThemes/${theme_name_encoded}.7z"
                 
                 preview_url=$(echo "$preview_url" | sed -e 's/ /%20/g' -e 's|//|/|g' -e 's|https:/|https://|')
