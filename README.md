@@ -103,6 +103,13 @@ Please help us by contributing your A30 themes here!
 <tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/MinUInspired%20(green).7z">
+        <img title="MinUInspired (green)" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/MinUInspired%20(green)/preview.png" /><br/>
+        <b>MinUInspired (green)</b>
+        </a><br/>
+        </td>
+<td align="center" valign="top" width="33.33%">
+        <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/MinUInspired%20(icons).7z">
         <img title="MinUInspired (icons)" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/MinUInspired%20(icons)/preview.png" /><br/>
         <b>MinUInspired (icons)</b>
@@ -115,6 +122,8 @@ Please help us by contributing your A30 themes here!
         <b>MinUInspired (logos)</b>
         </a><br/>
         </td>
+</tr>
+<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/SPRUCE%20(simple).7z">
@@ -122,8 +131,6 @@ Please help us by contributing your A30 themes here!
         <b>SPRUCE (simple)</b>
         </a><br/>
         </td>
-</tr>
-<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/SPRUCE.7z">
