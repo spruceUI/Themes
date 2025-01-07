@@ -28,17 +28,25 @@ jobs:
             if [ -d "$theme_dir" ] && [ "$theme_dir" != "PackedThemes/" ]; then
               theme_name="${theme_dir#Themes/}"
               theme_name="${theme_name%/}"
-              preview_path="$theme_dir/preview.png"
+              preview_path_gif="$theme_dir/preview.gif"
+              preview_path_png="$theme_dir/preview.png"
               packed_path="PackedThemes/$theme_name.7z"
               config_path="$theme_dir/config.json"
               
-              if [ -f "$preview_path" ] && [ -f "$packed_path" ] && [ -f "$config_path" ]; then
+              if [ -f "$packed_path" ] && [ -f "$config_path" ] && { [ -f "$preview_path_gif" ] || [ -f "$preview_path_png" ]; }; then
                 # Extract author and description from config.json
                 author=$(jq -r '.author' "$config_path")
                 description=$(jq -r '.description' "$config_path")
                 
+                # Determine which preview file to use
+                if [ -f "$preview_path_gif" ]; then
+                  preview_path="$preview_path_gif"
+                else
+                  preview_path="$preview_path_png"
+                fi
+                
                 # Create properly encoded URLs
-                preview_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/${theme_dir}preview.png"
+                preview_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/${preview_path}"
                 download_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/PackedThemes/${theme_name}.7z"
                 
                 preview_url=$(echo "$preview_url" | sed -e 's/ /%20/g')
