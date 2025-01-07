@@ -3,7 +3,7 @@ name: Package Theme Updates
 on:
   push:
     paths-ignore:
-      - 'PackedThemes/**'
+      - '*.7z'
       - '.*'
       - '*.md'
       - 'LICENSE'
@@ -24,8 +24,8 @@ jobs:
           
       - name: Package Modified Themes
         run: |
-          # Get modified files from the last commit (excluding PackedThemes and root files)
-          MODIFIED_FILES=$(git show --name-only --pretty="" HEAD | grep -v '^PackedThemes/' | grep -v '^[^/]*$' || true)
+          # Get modified files from Themes directory
+          MODIFIED_FILES=$(git show --name-only --pretty="" HEAD | grep '^Themes/' || true)
           
           if [ -z "$MODIFIED_FILES" ]; then
             echo "No theme files were modified"
@@ -35,34 +35,33 @@ jobs:
           echo "Modified files:"
           echo "$MODIFIED_FILES"
           
-          # Extract unique folder names from modified files
-          FOLDERS=$(echo "$MODIFIED_FILES" | cut -d'/' -f1 | sort -u)
+          # Extract unique theme names from modified files (now one level deeper)
+          THEMES=$(echo "$MODIFIED_FILES" | cut -d'/' -f2 | sort -u)
           
-          echo "Debug: Listing each folder individually:"
-          printf '%s\n' "$FOLDERS"
+          echo "Debug: Listing each theme individually:"
+          printf '%s\n' "$THEMES"
           
           WORKSPACE="$PWD"
-          mkdir -p PackedThemes
           
-          # Process each modified theme folder
-          printf '%s\n' "$FOLDERS" | while IFS= read -r folder; do
-            echo "Debug: Processing folder: '$folder'"
-            if [ -d "$folder" ]; then
-              echo "Debug: Directory exists: '$folder'"
+          # Process each modified theme
+          printf '%s\n' "$THEMES" | while IFS= read -r theme; do
+            echo "Debug: Processing theme: '$theme'"
+            if [ -d "Themes/$theme" ]; then
+              echo "Debug: Theme directory exists: 'Themes/$theme'"
               # Remove existing archive if it exists
-              rm -f "${WORKSPACE}/PackedThemes/${folder}.7z"
+              rm -f "${WORKSPACE}/${theme}.7z"
               
               # Create temporary directory structure
               mkdir -p "temp/mnt/SDCARD/Themes"
-              cp -r "$folder" "temp/mnt/SDCARD/Themes/"
+              cp -r "Themes/$theme" "temp/mnt/SDCARD/Themes/"
               
               # Create fresh 7z archive from workspace root
-              7z a -r "${WORKSPACE}/PackedThemes/${folder}.7z" "${WORKSPACE}/temp/mnt"
+              7z a -r "${WORKSPACE}/${theme}.7z" "${WORKSPACE}/temp/mnt"
               
               # Cleanup
               rm -rf temp
             else
-              echo "Debug: Directory does not exist: '$folder'"
+              echo "Debug: Theme directory does not exist: 'Themes/$theme'"
             fi
           done
           
@@ -70,6 +69,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add PackedThemes/*.7z
+          git add *.7z
           git commit -m "Update theme packages" || echo "No changes to commit"
           git push

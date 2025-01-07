@@ -24,9 +24,10 @@ jobs:
           declare -a themes=()
           
           # Process each theme folder
-          for theme_dir in */; do
+          for theme_dir in Themes/*/; do
             if [ -d "$theme_dir" ] && [ "$theme_dir" != "PackedThemes/" ]; then
-              theme_name="${theme_dir%/}"
+              theme_name="${theme_dir#Themes/}"
+              theme_name="${theme_name%/}"
               preview_path="$theme_dir/preview.png"
               packed_path="PackedThemes/$theme_name.7z"
               config_path="$theme_dir/config.json"
