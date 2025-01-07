@@ -1,7 +1,7 @@
 {
   "name": "KantOS",
   "author": "Chris Cromer",
-  "description": "A KantOS port heavily tweaked for Spruce",
+  "description": "A KantOS port heavily tweaked for spruce",
   "batteryPercentage": {
     "visible": false,
     "size": 18,
