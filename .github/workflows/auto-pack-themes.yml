@@ -43,20 +43,23 @@ jobs:
           
           WORKSPACE="$PWD"
           
+          # Ensure PackedThemes directory exists
+          mkdir -p PackedThemes
+          
           # Process each modified theme
           printf '%s\n' "$THEMES" | while IFS= read -r theme; do
             echo "Debug: Processing theme: '$theme'"
             if [ -d "Themes/$theme" ]; then
               echo "Debug: Theme directory exists: 'Themes/$theme'"
               # Remove existing archive if it exists
-              rm -f "${WORKSPACE}/${theme}.7z"
+              rm -f "PackedThemes/${theme}.7z"
               
               # Create temporary directory structure
               mkdir -p "temp/mnt/SDCARD/Themes"
               cp -r "Themes/$theme" "temp/mnt/SDCARD/Themes/"
               
-              # Create fresh 7z archive from workspace root
-              7z a -r "${WORKSPACE}/${theme}.7z" "${WORKSPACE}/temp/mnt"
+              # Create fresh 7z archive in PackedThemes directory
+              7z a -r "PackedThemes/${theme}.7z" "${WORKSPACE}/temp/mnt"
               
               # Cleanup
               rm -rf temp
@@ -69,6 +72,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add *.7z
+          git add PackedThemes/*.7z
           git commit -m "Update theme packages" || echo "No changes to commit"
           git push

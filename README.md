@@ -1,8 +1,9 @@
 Please help us by contributing your A30 themes here!
 
-![spruce-home-page](https://github.com/user-attachments/assets/b9f90d8b-0f6f-4d3b-a129-e3d83fbcd41e)
 
 [Check out our Theme Design Guide for more information on making your own theme](https://github.com/spruceUI/spruceOS/wiki/09.-Theme-Design-guide)
+
+Themes here are in .7z format, you can place them into your `/Themes` folder and spruce will automatically unzip them on next boot.
 
 
 ## Theme Gallery
@@ -158,4 +159,4 @@ Please help us by contributing your A30 themes here!
 </tr>
 </table>
 
-Themes here are in .7z format, you can place them into your Themes folder and spruce will automatically unzip them.
+Themes here are in .7z format, you can place them into your `/Themes` folder and spruce will automatically unzip them on next boot.
