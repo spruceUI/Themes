@@ -17,6 +17,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y p7zip-full
           
+      - name: Prepare PackedThemes Directory
+        run: |
+          # Create PackedThemes directory if it doesn't exist
+          mkdir -p PackedThemes
+          # Remove all existing files in PackedThemes
+          rm -f PackedThemes/*
+          
       - name: Package All Themes
         run: |
           # Find all theme folders (excluding PackedThemes and hidden folders)
@@ -27,9 +34,6 @@ jobs:
           
           # Store the absolute path to the workspace
           WORKSPACE="$PWD"
-          
-          # Create PackedThemes directory if it doesn't exist
-          mkdir -p PackedThemes
           
           # Process each theme folder
           printf '%s\n' "$FOLDERS" | while IFS= read -r folder; do
