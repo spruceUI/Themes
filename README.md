@@ -156,6 +156,14 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>tenlevels</i></small><br/>
         <small>spruce theme for a30</small><br/>
         </td>
+<td align="center" valign="top" width="33.33%">
+        <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/poopce.7z">
+        <img title="poopce" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/Themes/poopce/preview.png" /><br/>
+        <b>poopce</b></a><br/>
+        <small><i>tenlevels</i></small><br/>
+        <small>spruce theme for a30</small><br/>
+        </td>
 </tr>
 </table>
 
