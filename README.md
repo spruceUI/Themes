@@ -150,14 +150,6 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         </td>
 <td align="center" valign="top" width="33.33%">
         <br/>
-        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/SPRUCE%20Company.7z">
-        <img title="SPRUCE Company" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/Themes/SPRUCE%20Company/preview.png" /><br/>
-        <b>SPRUCE Company</b></a><br/>
-        <small><i>tenlevels</i></small><br/>
-        <small>spruce theme for a30</small><br/>
-        </td>
-<td align="center" valign="top" width="33.33%">
-        <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/SPRUCE.7z">
         <img title="SPRUCE" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/Themes/SPRUCE/preview.png" /><br/>
         <b>SPRUCE</b></a><br/>
