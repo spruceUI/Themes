@@ -23,9 +23,13 @@ jobs:
         run: |
           # Get list of all current theme directories
           current_themes=$(ls -d Themes/*/ 2>/dev/null | cut -d'/' -f2)
+          echo "Current themes in directory:"
+          echo "$current_themes"
           
-          # Get list of themes mentioned in README
-          readme_themes=$(grep -o '## \[.*\]' README.md | sed 's/## \[\(.*\)\]/\1/')
+          # Get list of themes mentioned in README by looking for the download links
+          readme_themes=$(grep -o 'PackedThemes/[^/]*\.7z' README.md | sed 's|PackedThemes/||' | sed 's|\.7z$||')
+          echo "Themes found in README:"
+          echo "$readme_themes"
           
           # Initialize change flag
           THEME_CHANGED=0
@@ -48,6 +52,7 @@ jobs:
             fi
           done
           
+          echo "Final THEME_CHANGED value: $THEME_CHANGED"
           echo "theme_changed=$THEME_CHANGED" >> "$GITHUB_OUTPUT"
 
       - name: Generate Theme Gallery
