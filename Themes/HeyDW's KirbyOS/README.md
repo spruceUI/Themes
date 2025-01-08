@@ -1,3 +1,6 @@
+A modification of CatOS for GarlicOS to KirbyOS for the A30
+https://github.com/hxhiep71/CatOs
+
 Icons: IBM's Carbon Design System
 https://carbondesignsystem.com/elements/icons/library/ 
 
