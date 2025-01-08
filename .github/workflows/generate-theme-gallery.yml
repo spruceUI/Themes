@@ -14,14 +14,15 @@ jobs:
     
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for all branches and tags
       
       - name: Check for new themes
         id: check-themes
         if: github.event_name == 'push'
         run: |
           # Get list of modified files
-          git fetch origin main
-          CHANGED_FILES=$(git diff --name-only HEAD^1 HEAD)
+          CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD || git diff --name-only HEAD)
           
           # Check if any theme directories were added or removed
           THEME_CHANGED=0
@@ -145,7 +146,7 @@ jobs:
           mv "$TEMP_FILE" README.md
 
       - name: Commit and push changes
-        if: github.event_name == 'workflow_dispatch' || steps.check-themes.outputs.theme_changed == '1'
+        if: github.event_name == 'workflow_dispatch' || steps.check-themes.outputs.new_theme == '1'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
