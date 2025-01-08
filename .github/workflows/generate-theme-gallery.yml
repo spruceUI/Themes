@@ -27,7 +27,8 @@ jobs:
           echo "$current_themes"
           
           # Get list of themes mentioned in README by looking for the download links
-          readme_themes=$(grep -o 'PackedThemes/[^/]*\.7z' README.md | sed 's|PackedThemes/||' | sed 's|\.7z$||')
+          # Decode URL-encoded names when extracting from README
+          readme_themes=$(grep -o 'PackedThemes/[^/]*\.7z' README.md | sed 's|PackedThemes/||' | sed 's|\.7z$||' | sed 's/%20/ /g')
           echo "Themes found in README:"
           echo "$readme_themes"
           
@@ -154,7 +155,7 @@ jobs:
           mv "$TEMP_FILE" README.md
 
       - name: Commit and push changes
-        if: github.event_name == 'workflow_dispatch' || steps.check-themes.outputs.new_theme == '1'
+        if: github.event_name == 'workflow_dispatch' || steps.check-themes.outputs.theme_changed == '1'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
