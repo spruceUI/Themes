@@ -1,4 +1,4 @@
-# `spruce` *by* `tenlevels`
+# `spruce-co` *by* `tenlevels`
 
 Theme for spruce modded stock os
 
