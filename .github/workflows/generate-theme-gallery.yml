@@ -1,7 +1,12 @@
 name: Update Theme Gallery
 
 on:
-  workflow_dispatch:  # Allows manual triggering
+  workflow_dispatch:  # Manual trigger
+  push:
+    paths:
+      - 'Themes/**'    # Triggers when changes are made in Themes directory
+    branches:
+      - main          # Only on main branch
 
 jobs:
   update-readme:
@@ -10,7 +15,40 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
+      - name: Check for new themes
+        id: check-themes
+        if: github.event_name == 'push'
+        run: |
+          # Get list of modified files
+          git fetch origin main
+          CHANGED_FILES=$(git diff --name-only HEAD^1 HEAD)
+          
+          # Check if any theme directories were added or removed
+          THEME_CHANGED=0
+          echo "$CHANGED_FILES" | while read -r file; do
+            if echo "$file" | grep -q "^Themes/[^/]*/"; then
+              theme_dir=$(echo "$file" | cut -d'/' -f1-2)
+              theme_name="${theme_dir#Themes/}"
+              
+              # Check if theme was removed (directory no longer exists)
+              if [ ! -d "$theme_dir" ] && grep -q "$theme_name" "README.md"; then
+                THEME_CHANGED=1
+                break
+              fi
+              
+              # Check if theme is new (exists but not in README)
+              if [ -d "$theme_dir" ] && ! grep -q "$theme_name" "README.md"; then
+                THEME_CHANGED=1
+                break
+              fi
+            fi
+          done
+          
+          echo "theme_changed=$THEME_CHANGED" >> "$GITHUB_OUTPUT"
+
       - name: Generate Theme Gallery
+        # Run if manually triggered or if themes changed
+        if: github.event_name == 'workflow_dispatch' || steps.check-themes.outputs.theme_changed == '1'
         id: generate-gallery
         run: |
           # Create temporary files
@@ -107,6 +145,7 @@ jobs:
           mv "$TEMP_FILE" README.md
 
       - name: Commit and push changes
+        if: github.event_name == 'workflow_dispatch' || steps.check-themes.outputs.theme_changed == '1'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
