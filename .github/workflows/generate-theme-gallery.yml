@@ -21,27 +21,30 @@ jobs:
         id: check-themes
         if: github.event_name == 'push'
         run: |
-          # Get list of modified files
-          CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD || git diff --name-only HEAD)
+          # Get list of all current theme directories
+          current_themes=$(ls -d Themes/*/ 2>/dev/null | cut -d'/' -f2)
           
-          # Check if any theme directories were added or removed
+          # Get list of themes mentioned in README
+          readme_themes=$(grep -o '## \[.*\]' README.md | sed 's/## \[\(.*\)\]/\1/')
+          
+          # Initialize change flag
           THEME_CHANGED=0
-          echo "$CHANGED_FILES" | while read -r file; do
-            if echo "$file" | grep -q "^Themes/[^/]*/"; then
-              theme_dir=$(echo "$file" | cut -d'/' -f1-2)
-              theme_name="${theme_dir#Themes/}"
-              
-              # Check if theme was removed (directory no longer exists)
-              if [ ! -d "$theme_dir" ] && grep -q "$theme_name" "README.md"; then
-                THEME_CHANGED=1
-                break
-              fi
-              
-              # Check if theme is new (exists but not in README)
-              if [ -d "$theme_dir" ] && ! grep -q "$theme_name" "README.md"; then
-                THEME_CHANGED=1
-                break
-              fi
+          
+          # Check for new themes (exist in directory but not in README)
+          for theme in $current_themes; do
+            if ! echo "$readme_themes" | grep -q "^${theme}$"; then
+              echo "New theme detected: $theme"
+              THEME_CHANGED=1
+              break
+            fi
+          done
+          
+          # Check for removed themes (exist in README but not in directory)
+          for theme in $readme_themes; do
+            if [ ! -d "Themes/$theme" ]; then
+              echo "Removed theme detected: $theme"
+              THEME_CHANGED=1
+              break
             fi
           done
           
