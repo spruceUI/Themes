@@ -1,5 +1,10 @@
 name: Package Theme Updates
 
+# Add this concurrency group
+concurrency: 
+  group: theme-updates
+  cancel-in-progress: false
+
 on:
   push:
     paths-ignore:
@@ -73,18 +78,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          # Pull latest changes with rebase strategy
-          git pull --rebase origin main
-          
           # Add and commit changes
           git add PackedThemes/*.7z
           git commit -m "Update theme packages" || echo "No changes to commit"
-          
-          # Push with retry logic in case of conflicts
-          for i in 1 2 3; do
-            if git push; then
-              break
-            else
-              git pull --rebase origin main
-            fi
-          done
+          git push

@@ -1,5 +1,10 @@
 name: Update Theme Gallery
 
+# Add this concurrency group
+concurrency: 
+  group: theme-updates
+  cancel-in-progress: false
+
 on:
   workflow_dispatch:  # Manual trigger
   push:
