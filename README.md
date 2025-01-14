@@ -5,6 +5,8 @@ Please help us by contributing your A30 themes here!
 
 **Note: Themes will be removed if we receive a takedown request from copyright holders.**
 
+**Takedown requests may be emailed to: thespruceosteam@gmail.com**
+
 Themes here are in .7z format, you can place them into your `/Themes` folder and spruce will automatically unzip them on next boot.
 
 
