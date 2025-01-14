@@ -26,37 +26,35 @@ jobs:
         id: check-themes
         if: github.event_name == 'push'
         run: |
-          # Get list of all current theme directories
-          current_themes=$(ls -d Themes/*/ 2>/dev/null | cut -d'/' -f2)
+          # Get list of all current theme directories, sorted
+          current_themes=$(ls -d Themes/*/ 2>/dev/null | cut -d'/' -f2 | sort)
           echo "Current themes in directory:"
           echo "$current_themes"
           
-          # Get list of themes mentioned in README by looking for the download links
-          # Decode URL-encoded names when extracting from README
-          readme_themes=$(grep -o 'PackedThemes/[^/]*\.7z' README.md | sed 's|PackedThemes/||' | sed 's|\.7z$||' | sed 's/%20/ /g')
+          # Get list of themes from README, sorted
+          readme_themes=$(grep -o 'PackedThemes/[^/]*\.7z' README.md | 
+            sed 's|PackedThemes/||' | 
+            sed 's|\.7z$||' | 
+            sed 's/%20/ /g' | 
+            sort)
           echo "Themes found in README:"
           echo "$readme_themes"
           
           # Initialize change flag
           THEME_CHANGED=0
           
-          # Check for new themes (exist in directory but not in README)
-          for theme in $current_themes; do
-            if ! echo "$readme_themes" | grep -q "^${theme}$"; then
-              echo "New theme detected: $theme"
-              THEME_CHANGED=1
-              break
-            fi
-          done
+          # Create temporary files for comparison
+          echo "$current_themes" > current_themes.txt
+          echo "$readme_themes" > readme_themes.txt
           
-          # Check for removed themes (exist in README but not in directory)
-          for theme in $readme_themes; do
-            if [ ! -d "Themes/$theme" ]; then
-              echo "Removed theme detected: $theme"
-              THEME_CHANGED=1
-              break
-            fi
-          done
+          # Compare the sorted lists
+          if ! cmp -s current_themes.txt readme_themes.txt; then
+            echo "Differences detected between directory and README"
+            THEME_CHANGED=1
+          fi
+          
+          # Clean up temp files
+          rm current_themes.txt readme_themes.txt
           
           echo "Final THEME_CHANGED value: $THEME_CHANGED"
           echo "theme_changed=$THEME_CHANGED" >> "$GITHUB_OUTPUT"
