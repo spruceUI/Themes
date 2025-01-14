@@ -144,6 +144,14 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
 <tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/Pico-8.7z">
+        <img title="Pico-8" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/Themes/Pico-8/preview.png" /><br/>
+        <b>Pico-8</b></a><br/>
+        <small><i>369px</i></small><br/>
+        <small>A Pico8 inspired pixel art theme</small><br/>
+        </td>
+<td align="center" valign="top" width="33.33%">
+        <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/SPRUCE%20(simple).7z">
         <img title="SPRUCE (simple)" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/Themes/SPRUCE%20(simple)/preview.png" /><br/>
         <b>SPRUCE (simple)</b></a><br/>
