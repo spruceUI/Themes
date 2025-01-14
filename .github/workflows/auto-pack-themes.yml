@@ -29,19 +29,21 @@ jobs:
           
       - name: Package Modified Themes
         run: |
-          # Get modified files from Themes directory
-          MODIFIED_FILES=$(git show --name-only --pretty="" HEAD | grep '^Themes/' || true)
+          # Get modified and new files from Themes directory
+          MODIFIED_FILES=$(git diff --name-only HEAD^ HEAD | grep '^Themes/' || true)
+          NEW_FILES=$(git ls-files --others --exclude-standard | grep '^Themes/' || true)
+          ALL_CHANGED_FILES="$MODIFIED_FILES"$'\n'"$NEW_FILES"
           
-          if [ -z "$MODIFIED_FILES" ]; then
-            echo "No theme files were modified"
+          if [ -z "$ALL_CHANGED_FILES" ]; then
+            echo "No theme files were modified or added"
             exit 0
           fi
           
-          echo "Modified files:"
-          echo "$MODIFIED_FILES"
+          echo "Modified and new files:"
+          echo "$ALL_CHANGED_FILES"
           
-          # Extract unique theme names from modified files (now one level deeper)
-          THEMES=$(echo "$MODIFIED_FILES" | cut -d'/' -f2 | sort -u)
+          # Extract unique theme names from changed files
+          THEMES=$(echo "$ALL_CHANGED_FILES" | cut -d'/' -f2 | sort -u)
           
           echo "Debug: Listing each theme individually:"
           printf '%s\n' "$THEMES"
