@@ -3,7 +3,7 @@ Please help us by contributing your A30 themes here!
 
 [Check out our Theme Design Guide for more information on making your own theme](https://github.com/spruceUI/spruceOS/wiki/09.-Theme-Design-guide)
 
-**Note: Themes will be removed if we receive a takedown request from copyright holders.**
+**Note: Themes will be removed if we receive a takedown request from copyright holders or the authors from themes from other platforms that do not want their assets to be reused.**
 
 **Takedown requests may be emailed to: thespruceosteam@gmail.com**
 
