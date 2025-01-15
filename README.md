@@ -176,7 +176,7 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <img title="ToTK" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/Themes/ToTK/preview.png" /><br/>
         <b>ToTK</b></a><br/>
         <small><i>Original Onion theme by NaraMakesGames, adapted for spruce by CraigN aka CruxisMithos</i></small><br/>
-        <small>Zelda ToTK inspired theme, icons, etc where taken from other Spruce and Onion OS themes</small><br/>
+        <small>Zelda ToTK inspired theme</small><br/>
         </td>
 </tr>
 </table>
