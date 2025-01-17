@@ -5,9 +5,9 @@ concurrency:
   cancel-in-progress: false
 
 on:
-  workflow_dispatch:  # Manual trigger
+  workflow_dispatch:
   workflow_run:
-    workflows: ["Package Theme Updates", "Package Theme Previews"]
+    workflows: ["Package Theme Previews"]
     types:
       - completed
     branches:

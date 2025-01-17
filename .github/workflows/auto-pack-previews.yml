@@ -16,6 +16,8 @@ on:
     paths:
       - 'Themes/*/preview.png'
       - 'Themes/*/preview.gif'
+    branches:
+      - main
 
 jobs:
   package-previews:
