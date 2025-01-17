@@ -68,6 +68,14 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
 <tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/HeyDW's%20PlayStation%2020th%20Anniversary.7z">
+        <img title="HeyDW's PlayStation 20th Anniversary" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/Themes/HeyDW's%20PlayStation%2020th%20Anniversary/preview.png" /><br/>
+        <b>HeyDW's PlayStation 20th Anniversary</b></a><br/>
+        <small><i>HeyDW</i></small><br/>
+        <small>HeyDW's PlayStation 20th Anniversary</small><br/>
+        </td>
+<td align="center" valign="top" width="33.33%">
+        <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/HeyDW's%20Red.7z">
         <img title="HeyDW's Red" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/Themes/HeyDW's%20Red/preview.png" /><br/>
         <b>HeyDW's Red</b></a><br/>
@@ -82,6 +90,8 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>HeyDW</i></small><br/>
         <small>Yellow</small><br/>
         </td>
+</tr>
+<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/KantOS.7z">
@@ -90,8 +100,6 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>Chris Cromer</i></small><br/>
         <small>A KantOS port heavily tweaked for spruce</small><br/>
         </td>
-</tr>
-<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/M%20-%20no%20labels.7z">
@@ -108,6 +116,8 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>tenlevels</i></small><br/>
         <small>Black/White/Grey minimal theme inspired by Miyoo logo</small><br/>
         </td>
+</tr>
+<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/MinUInspired%20(Grey).7z">
@@ -116,8 +126,6 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>tenlevels</i></small><br/>
         <small>MinUI inspired theme for a30</small><br/>
         </td>
-</tr>
-<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/MinUInspired%20(green).7z">
@@ -134,6 +142,8 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>tenlevels</i></small><br/>
         <small>MinUI inspired theme for a30</small><br/>
         </td>
+</tr>
+<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/MinUInspired%20(logos).7z">
@@ -142,8 +152,6 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>tenlevels</i></small><br/>
         <small>MinUI inspired theme for a30</small><br/>
         </td>
-</tr>
-<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/PIXEL%20SPRUCE.7z">
@@ -160,6 +168,8 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>369px</i></small><br/>
         <small>A Pico8 inspired pixel art theme</small><br/>
         </td>
+</tr>
+<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/SPRUCE%20(simple).7z">
@@ -168,8 +178,6 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>tenlevels</i></small><br/>
         <small>spruce theme for a30</small><br/>
         </td>
-</tr>
-<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/SPRUCE.7z">
