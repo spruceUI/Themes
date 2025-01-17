@@ -24,7 +24,6 @@ jobs:
       
       - name: Check for new themes
         id: check-themes
-        if: github.event_name == 'push'
         run: |
           # Get list of all current theme directories, sorted
           current_themes=$(find Themes -maxdepth 1 -mindepth 1 -type d | sed 's|Themes/||' | sort)
@@ -58,8 +57,7 @@ jobs:
           rm current_themes.txt readme_themes.txt theme_diff.txt
 
       - name: Generate Theme Gallery
-        # Run if manually triggered or if themes changed
-        if: github.event_name == 'workflow_dispatch' || steps.check-themes.outputs.theme_changed == '1'
+        if: github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_run' || steps.check-themes.outputs.theme_changed == '1'
         id: generate-gallery
         run: |
           # Create backup of current README
