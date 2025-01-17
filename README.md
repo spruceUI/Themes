@@ -146,6 +146,14 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
 <tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/PIXEL%20SPRUCE.7z">
+        <img title="PIXEL SPRUCE" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/Themes/PIXEL%20SPRUCE/preview.png" /><br/>
+        <b>PIXEL SPRUCE</b></a><br/>
+        <small><i>369px</i></small><br/>
+        <small>Mix spruce with a little bit of pixels and here's what you get ;)</small><br/>
+        </td>
+<td align="center" valign="top" width="33.33%">
+        <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/Pico-8.7z">
         <img title="Pico-8" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/Themes/Pico-8/preview.png" /><br/>
         <b>Pico-8</b></a><br/>
@@ -160,6 +168,8 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>tenlevels</i></small><br/>
         <small>spruce theme for a30</small><br/>
         </td>
+</tr>
+<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/SPRUCE.7z">
@@ -168,8 +178,6 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>tenlevels</i></small><br/>
         <small>spruce theme for a30</small><br/>
         </td>
-</tr>
-<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/ToTK.7z">
