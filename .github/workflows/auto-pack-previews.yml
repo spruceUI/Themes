@@ -7,21 +7,16 @@ concurrency:
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ["Package Theme Updates"]
+    workflows: ["Auto Package Themes"]
     types:
       - completed
-    branches:
-      - main
-  push:
-    paths:
-      - 'Themes/*/preview.png'
-      - 'Themes/*/preview.gif'
     branches:
       - main
 
 jobs:
   package-previews:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     
     steps:
       - uses: actions/checkout@v4

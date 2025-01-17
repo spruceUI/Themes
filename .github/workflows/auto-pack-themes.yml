@@ -1,4 +1,4 @@
-name: Package Theme Updates
+name: Auto Package Themes
 
 # Add this concurrency group
 concurrency: 
