@@ -2,7 +2,7 @@ name: Package Theme Updates
 
 # Add this concurrency group
 concurrency: 
-  group: theme-updates
+  group: theme-packing
   cancel-in-progress: false
 
 on:

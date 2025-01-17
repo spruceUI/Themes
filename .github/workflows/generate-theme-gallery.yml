@@ -1,17 +1,17 @@
 name: Update Theme Gallery
 
-# Add this concurrency group
 concurrency: 
-  group: theme-updates
+  group: theme-gallery
   cancel-in-progress: false
 
 on:
   workflow_dispatch:  # Manual trigger
-  push:
-    paths:
-      - 'Themes/**'    # Triggers when changes are made in Themes directory
+  workflow_run:
+    workflows: ["Package Theme Updates"]
+    types:
+      - completed
     branches:
-      - main          # Only on main branch
+      - main
 
 jobs:
   update-readme:
