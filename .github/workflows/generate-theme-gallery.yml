@@ -27,9 +27,9 @@ jobs:
         if: github.event_name == 'push'
         run: |
           # Get list of all current theme directories, sorted
-          current_themes=$(ls -d Themes/*/ 2>/dev/null | cut -d'/' -f2 | sort)
-          echo "Current themes in directory:"
-          echo "$current_themes"
+          current_themes=$(find Themes -maxdepth 1 -mindepth 1 -type d | sed 's|Themes/||' | sort)
+          echo "::debug::Current themes in directory:"
+          echo "::debug::$current_themes"
           
           # Get list of themes from README, sorted
           readme_themes=$(grep -o 'PackedThemes/[^/]*\.7z' README.md | 
@@ -37,33 +37,34 @@ jobs:
             sed 's|\.7z$||' | 
             sed 's/%20/ /g' | 
             sort)
-          echo "Themes found in README:"
-          echo "$readme_themes"
-          
-          # Initialize change flag
-          THEME_CHANGED=0
+          echo "::debug::Themes found in README:"
+          echo "::debug::$readme_themes"
           
           # Create temporary files for comparison
           echo "$current_themes" > current_themes.txt
           echo "$readme_themes" > readme_themes.txt
           
-          # Compare the sorted lists
-          if ! cmp -s current_themes.txt readme_themes.txt; then
-            echo "Differences detected between directory and README"
-            THEME_CHANGED=1
+          # Compare the sorted lists and store differences
+          if ! diff current_themes.txt readme_themes.txt > theme_diff.txt; then
+            echo "::notice::Differences detected between directory and README:"
+            cat theme_diff.txt
+            echo "theme_changed=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::No differences detected"
+            echo "theme_changed=0" >> "$GITHUB_OUTPUT"
           fi
           
           # Clean up temp files
-          rm current_themes.txt readme_themes.txt
-          
-          echo "Final THEME_CHANGED value: $THEME_CHANGED"
-          echo "theme_changed=$THEME_CHANGED" >> "$GITHUB_OUTPUT"
+          rm current_themes.txt readme_themes.txt theme_diff.txt
 
       - name: Generate Theme Gallery
         # Run if manually triggered or if themes changed
         if: github.event_name == 'workflow_dispatch' || steps.check-themes.outputs.theme_changed == '1'
         id: generate-gallery
         run: |
+          # Create backup of current README
+          cp README.md README.md.bak
+          
           # Create temporary files
           TEMP_FILE=$(mktemp)
           GALLERY_CONTENT=$(mktemp)
@@ -156,12 +157,24 @@ jobs:
           
           # Replace the original README
           mv "$TEMP_FILE" README.md
+          
+          # Compare if there were actual changes
+          if ! diff README.md README.md.bak > readme_diff.txt; then
+            echo "::notice::README content has changed"
+            cat readme_diff.txt
+            echo "readme_changed=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::README content remains the same"
+            echo "readme_changed=0" >> "$GITHUB_OUTPUT"
+          fi
+          
+          rm README.md.bak readme_diff.txt
 
       - name: Commit and push changes
-        if: github.event_name == 'workflow_dispatch' || steps.check-themes.outputs.theme_changed == '1'
+        if: (github.event_name == 'workflow_dispatch' || steps.check-themes.outputs.theme_changed == '1') && steps.generate-gallery.outputs.readme_changed == '1'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add README.md
-          git commit -m "Update theme gallery" || exit 0
-          git push
+          git commit -m "Update theme gallery" || echo "No changes to commit"
+          git push || echo "No changes to push"
