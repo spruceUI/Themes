@@ -7,7 +7,7 @@ concurrency:
 on:
   workflow_dispatch:  # Manual trigger
   workflow_run:
-    workflows: ["Package Theme Updates"]
+    workflows: ["Package Theme Updates", "Package Theme Previews"]
     types:
       - completed
     branches:
