@@ -172,6 +172,14 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
 <tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/Poopce.7z">
+        <img title="Poopce" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/Themes/Poopce/preview.png" /><br/>
+        <b>Poopce</b></a><br/>
+        <small><i>my butt</i></small><br/>
+        <small>spruce theme for a30</small><br/>
+        </td>
+<td align="center" valign="top" width="33.33%">
+        <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/SPRUCE%20(simple).7z">
         <img title="SPRUCE (simple)" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/Themes/SPRUCE%20(simple)/preview.png" /><br/>
         <b>SPRUCE (simple)</b></a><br/>
@@ -186,6 +194,8 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>tenlevels</i></small><br/>
         <small>spruce theme for a30</small><br/>
         </td>
+</tr>
+<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/ToTK.7z">
