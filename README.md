@@ -16,6 +16,14 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
 <tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
+        <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/Another%20369px%20theme.7z">
+        <img title="Another 369px theme" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/Themes/Another%20369px%20theme/preview.png" /><br/>
+        <b>Another 369px theme</b></a><br/>
+        <small><i>369px</i></small><br/>
+        <small>Downgrade your display to a monochrome LCD today!</small><br/>
+        </td>
+<td align="center" valign="top" width="33.33%">
+        <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/Avocado.7z">
         <img title="Avocado" width="200px" src="https://raw.githubusercontent.com/spruceUI/Themes/main/Themes/Avocado/preview.png" /><br/>
         <b>Avocado</b></a><br/>
@@ -30,6 +38,8 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>KyleBing</i></small><br/>
         <small>Cosy</small><br/>
         </td>
+</tr>
+<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/Glamoruce.7z">
@@ -38,8 +48,6 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>metallic77</i></small><br/>
         <small>a spruce os modern theme</small><br/>
         </td>
-</tr>
-<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/HeyDW's%20Blue.7z">
@@ -56,6 +64,8 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>HeyDW</i></small><br/>
         <small>Green</small><br/>
         </td>
+</tr>
+<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/HeyDW's%20KirbyOS.7z">
@@ -64,8 +74,6 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>HeyDW</i></small><br/>
         <small>KirbyOS</small><br/>
         </td>
-</tr>
-<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/HeyDW's%20PlayStation%2020th%20Anniversary.7z">
@@ -82,6 +90,8 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>HeyDW</i></small><br/>
         <small>Red</small><br/>
         </td>
+</tr>
+<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/HeyDW's%20Yellow.7z">
@@ -90,8 +100,6 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>HeyDW</i></small><br/>
         <small>Yellow</small><br/>
         </td>
-</tr>
-<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/KantOS.7z">
@@ -108,6 +116,8 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>tenlevels</i></small><br/>
         <small>Black/White/Grey minimal theme inspired by Miyoo logo</small><br/>
         </td>
+</tr>
+<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/M.7z">
@@ -116,8 +126,6 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>tenlevels</i></small><br/>
         <small>Black/White/Grey minimal theme inspired by Miyoo logo</small><br/>
         </td>
-</tr>
-<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/MinUInspired%20(Grey).7z">
@@ -134,6 +142,8 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>tenlevels</i></small><br/>
         <small>MinUI inspired theme for a30</small><br/>
         </td>
+</tr>
+<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/MinUInspired%20(icons).7z">
@@ -142,8 +152,6 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>tenlevels</i></small><br/>
         <small>MinUI inspired theme for a30</small><br/>
         </td>
-</tr>
-<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/MinUInspired%20(logos).7z">
@@ -160,6 +168,8 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>369px</i></small><br/>
         <small>Mix spruce with a little bit of pixels and here's what you get ;)</small><br/>
         </td>
+</tr>
+<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/Pico-8.7z">
@@ -168,8 +178,6 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>369px</i></small><br/>
         <small>A Pico8 inspired pixel art theme</small><br/>
         </td>
-</tr>
-<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/SPRUCE%20(simple).7z">
@@ -186,6 +194,8 @@ Themes here are in .7z format, you can place them into your `/Themes` folder and
         <small><i>tenlevels</i></small><br/>
         <small>spruce theme for a30</small><br/>
         </td>
+</tr>
+<tr>
 <td align="center" valign="top" width="33.33%">
         <br/>
         <a href="https://raw.githubusercontent.com/spruceUI/Themes/main/PackedThemes/ToTK.7z">
