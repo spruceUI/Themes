@@ -1,8 +1,8 @@
-name: Package Theme Updates
+name: Auto Package Themes
 
 # Add this concurrency group
 concurrency: 
-  group: theme-updates
+  group: theme-packing
   cancel-in-progress: false
 
 on:
