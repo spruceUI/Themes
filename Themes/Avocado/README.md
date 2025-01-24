@@ -5,7 +5,7 @@ Theme for spruce modded stock os
 
 ## Credits
 
-**Font SmallLcd.ttf:** by myname5749
+**Font:** PixelPanel-SemiBold:** by Oliver Lalan
 
 **Icons:** By [Icons8](https://icons8.com/) - Cute Outline. Edited and modified by Sky_Walker
 

@@ -4,27 +4,27 @@
     "description": "Avocado inspired theme",
     "batteryPercentage": {
         "color": "#EBDBB2",
-        "font": "SmallLcd.ttf",
-        "size": 20
+        "font": "PixelPanel-SemiBold.ttf",
+        "size": 37
     },
     "title": {
-        "font": "SmallLcd.ttf",
-        "size": 20,
+        "font": "PixelPanel-SemiBold.ttf",
+        "size": 37,
         "color": "#EBDBB2"
     },
     "hint": {
-        "font": "SmallLcd.ttf",
-        "size": 20,
+        "font": "PixelPanel-SemiBold.ttf",
+        "size": 37,
         "color": "#EBDBB2"
     },
     "currentpage": {
-        "font": "SmallLcd.ttf",
-        "size": 20,
+        "font": "PixelPanel-SemiBold.ttf",
+        "size": 37,
         "color": "#EBDBB2"
     },
     "total": {
-        "font": "SmallLcd.ttf",
-        "size": 20,
+        "font": "PixelPanel-SemiBold.ttf",
+        "size": 37,
         "color": "#EBDBB2"
     },
     "grid": {
@@ -35,8 +35,8 @@
         "selectedcolor": "#FBF1C7"
     },
     "list": {
-        "font": "SmallLcd.ttf",
-        "size": 12,
+        "font": "PixelPanel-SemiBold.ttf",
+        "size": 19,
         "color": "#FBF1C7",
         "selectedcolor": "#FBF1C7"
 
