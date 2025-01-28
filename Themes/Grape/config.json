@@ -31,14 +31,14 @@
         "font": "AdobeBlank.ttc",
         "grid1x4": 20,
         "grid3x4": 20,
-        "color": "#7C6F64",
-        "selectedcolor": "#FBF1C7"
+        "color": "#f7f5fb",
+        "selectedcolor": "#f7f5fb"
     },
     "list": {
         "font": "PixelPanel-SemiBold.ttf",
         "size": 19,
-        "color": "#FBF1C7",
-        "selectedcolor": "#FBF1C7"
+        "color": "#f7f5fb",
+        "selectedcolor": "#f7f5fb"
 
     }
 }
