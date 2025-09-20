@@ -40,5 +40,7 @@
         "color": "#FBF1C7",
         "selectedcolor": "#FBF1C7"
 
-    }
+    },
+    "recentsEnabled": false,
+    "topBarInitialXOffset": 60
 }
