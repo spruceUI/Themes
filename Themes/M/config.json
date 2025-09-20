@@ -41,5 +41,7 @@
         "color": "#dddddd",
         "selectedcolor": "#dddddd"
 
-    }
+    },
+    "recentsEnabled": false,
+    "topBarInitialXOffset": 85
 }
