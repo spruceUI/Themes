@@ -1,5 +1,6 @@
 {
-    "name": "HeyDW's Blue",
+    "showBottomBar": true,
+    "name": "Blue HeyDW",
     "hideIconTitle": false,
     "batteryPercentage": {
         "visible": true,
@@ -46,5 +47,6 @@
         "font": "NotoSans_Condensed-SemiBold.ttf",
         "size": 24,
         "color": "#FFFFFF"
-    }
+    },
+    "recentsEnabled": false
 }

@@ -1,4 +1,5 @@
 {
+    "showBottomBar": true,
     "name": "ToTK",
     "hideIconTitle": false,
     "batteryPercentage": {
@@ -48,5 +49,6 @@
         "font": "nunwen.ttf",
         "size": 26,
         "color": "#FFFFFF"
-    }
+    },
+    "recentsEnabled": false
 }

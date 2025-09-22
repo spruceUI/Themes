@@ -1,4 +1,5 @@
 {
+    "showBottomBar": true,
     "name": "PICO-8",
     "author": "369px",
     "description": "A Pico8 inspired pixel art theme",
@@ -37,5 +38,7 @@
         "size": 22,
         "color": "#FFF1E8",
         "selectedcolor": "#ffccaa"
-    }
+    },
+    "recentsEnabled": false,
+    "topBarInitialXOffset": 55
 }

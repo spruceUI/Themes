@@ -1,4 +1,5 @@
 {
+    "showBottomBar": true,
     "name": "MinUInspired (Icons)",
     "author": "tenlevels",
     "description": "MinUI inspired theme for a30",
@@ -39,6 +40,7 @@
         "size": 28,
         "color": "#EBEBEB",
         "selectedcolor": "#EBEBEB"
-
-    }
+    },
+    "recentsEnabled": false,
+    "topBarInitialXOffset": 55
 }

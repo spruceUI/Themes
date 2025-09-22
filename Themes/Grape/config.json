@@ -1,4 +1,5 @@
 {
+    "showBottomBar": true,
     "name": "Grape",
     "author": "Remix by XanXic",
     "description": "Remix of Avacado by Sky_Walker to be Grape themed",
@@ -39,6 +40,6 @@
         "size": 19,
         "color": "#f7f5fb",
         "selectedcolor": "#f7f5fb"
-
-    }
+    },
+    "recentsEnabled": false
 }

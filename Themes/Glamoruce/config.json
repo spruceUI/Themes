@@ -1,4 +1,5 @@
 {
+    "showBottomBar": true,
     "name": "Glamoruce",
     "author": "metallic77",
     "description": "a spruce os modern theme",
@@ -39,5 +40,6 @@
         "size": 20,
         "color": "#FFF1E8",
         "selectedcolor": "#FFFFFF"
-    }
+    },
+    "recentsEnabled": false
 }

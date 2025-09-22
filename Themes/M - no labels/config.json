@@ -1,4 +1,5 @@
 {
+    "showBottomBar": true,
     "name": "M - no labels",
     "author": "tenlevels",
     "description": "Black/White/Grey minimal theme inspired by Miyoo logo",
@@ -41,5 +42,7 @@
         "font": "Gravity-Light.otf",
         "size": 24,
         "color": "#dddddd"
-    }
+    },
+    "recentsEnabled": false,
+    "topBarInitialXOffset": 85
 }

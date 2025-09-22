@@ -1,4 +1,5 @@
 {
+    "showBottomBar": true,
     "name": "HeyDW's Red",
     "hideIconTitle": false,
     "batteryPercentage": {
@@ -46,5 +47,6 @@
         "font": "NotoSans_Condensed-SemiBold.ttf",
         "size": 24,
         "color": "#FFFFFF"
-    }
+    },
+    "recentsEnabled": false
 }
